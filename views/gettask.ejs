@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <ul>
+      <% tasks.forEach(function(contact) { %>
+        <h2> <li> Title:<%= contact.title %></h2> Description:<%= contact.description%></li>
+      <% }); %> 
+     </ul>
+  
+  </body>
+</html>

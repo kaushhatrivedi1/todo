@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task </title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Delete Task</h1>
+        <form id="myForm2">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required>
+
+
+            <input type="button" id="create-task" value="Delete Task" onclick="submitForm()">
+
+        </form>
+
+        <div id="tasks">
+            <!-- Tasks will be displayed here -->
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            console.log('submitForm() function called');
+            event.preventDefault();
+            const form = document.getElementById('myForm2');
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/api/tasks/delete');
+            xhr.onreadystatechange = function () {
+                //console.log(xhr.readyState)
+                //console.log(form)
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    console.log(xhr.statusText)
+                    if (xhr.status == 200) {
+                        console.log(xhr.status);
+                        console.log(xhr.responseText);
+                        //window.open("http://localhost:3000/api/tasks")
+                        const result = document.getElementById('tasks');
+                        result.innerHTML = xhr.responseText;
+                    } else {
+                        alert('An error occurred while submitting the form');
+                    }
+                }
+                
+            };
+            xhr.send(formData);
+        }
+    </script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

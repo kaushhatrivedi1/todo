@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Four Buttons</title>
+	<style>
+		.button {
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 25px;
+		}
+		.button1 {background-color: #4CAF50;} /* Green */
+		.button2 {background-color: #008CBA;} /* Blue */
+		.button3 {background-color: #f44336;} /* Red */ 
+		.button4 {background-color: #555555;} /* Black */ 
+        .button5 {background-color: #e899d8;} 
+	</style>	
+</head>
+<body>
+
+	<h2>To-do</h2>
+
+	<a href= "http://localhost:3000/api/tasks/add"><button class="button button1">Add task</button></a>
+	<a href= "http://localhost:3000/api/tasks/getdata"><button class="button button2">Get all task</button></a>
+	<a href= "http://localhost:3000/api/tasks/getid"><button class="button button3">Get task by id</button></a>
+	<a href= "http://localhost:3000/api/tasks/getidup"><button class="button button4">Update task</button></a>
+	<a href= "http://localhost:3000/api/tasks/getiddel"> <button class="button button5">Deletetask</button></a>
+    <!-- <a href= "http://localhost:3000/api/tasks/random"><button class="button button1">Generate random task</button></a> -->
+</body>	
+</html>
